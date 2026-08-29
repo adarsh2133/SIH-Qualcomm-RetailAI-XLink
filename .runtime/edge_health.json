@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-08-29T22:10:33.300825",
+  "edge_node_id": "pi-1",
+  "services": {
+    "retailedge-entry-counter": {
+      "running": null,
+      "uptime_seconds": null
+    },
+    "retailedge-queue-monitor": {
+      "running": null,
+      "uptime_seconds": null
+    },
+    "retailedge-shelf-monitor": {
+      "running": null,
+      "uptime_seconds": null
+    }
+  },
+  "status_files": {
+    "entry": {
+      "exists": false,
+      "status": "STALE",
+      "age_seconds": 479.7,
+      "data": null
+    },
+    "queue": {
+      "exists": false,
+      "status": "STALE",
+      "age_seconds": 31.0,
+      "data": null
+    },
+    "stock": {
+      "exists": false,
+      "status": "STALE",
+      "age_seconds": 82.3,
+      "data": null
+    }
+  },
+  "system": {
+    "cpu_percent": 6.5,
+    "memory_percent": 71.2,
+    "memory_mb": 11535.6,
+    "disk_percent": 98.3,
+    "temperature": null
+  },
+  "network": {
+    "online": false,
+    "gateway": "8.8.8.8"
+  },
+  "overall_health": {
+    "healthy": false,
+    "services_ok": true,
+    "files_ok": false,
+    "network_ok": false
+  }
+}

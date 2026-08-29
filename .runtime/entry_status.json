@@ -1,0 +1,10 @@
+{
+  "camera": "entry_camera",
+  "connected": false,
+  "entry_count": 0,
+  "exit_count": 0,
+  "last_event": "",
+  "people_detected": 0,
+  "detections": [],
+  "timestamp": "2026-08-29 22:02:33"
+}

@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-08-29 22:10:02",
+  "queue_length": 0,
+  "status": "NORMAL",
+  "threshold": 3,
+  "congestion_level": "Low",
+  "connected": false,
+  "cameras": {
+    "queue_camera_1": {
+      "connected": false
+    },
+    "queue_camera_2": {
+      "connected": false
+    }
+  }
+}
