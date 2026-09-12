@@ -1,4 +1,23 @@
-# 🛒 RetailAI Edge System
+# RetailAI Edge System
+
+## Organized layout
+
+```text
+src/retailedge/   Edge sensors, health, metrics API, and dashboard
+models/            YOLO model files
+deploy/            System launcher and deployment assets
+runtime/           Local runtime documentation/output location
+```
+
+The root scripts remain compatibility entrypoints. The canonical launcher is
+`deploy/launch_retailedge.py`, and canonical hardware modules live under
+`src/retailedge/`.
+
+Run from the repository root:
+
+```bash
+python deploy/launch_retailedge.py --no-dashboard
+```
 
 ### AI-Powered, Privacy-First Retail Intelligence on the Edge
 

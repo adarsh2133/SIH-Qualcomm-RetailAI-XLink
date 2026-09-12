@@ -1,0 +1,18 @@
+# Python caches and local environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Local configuration and runtime output
+.env
+.runtime/
+.runtime-dev/
+runtime/*.json
+
+# Local model downloads/build output
+*.pt.tmp
+
+# OS/editor files
+.DS_Store
+Thumbs.db
