@@ -61,15 +61,21 @@ sudo ufw allow 8080/tcp
 
 ## Phone Setup
 
-Connect all four phones to the same Wi-Fi as the server laptop. In the phone
-camera streaming app, publish each phone to one path on the server:
+Connect all four phones to the same Wi-Fi as the server. Use a camera
+broadcasting app that supports RTMP publishing, such as Larix Broadcaster.
+OctoStream is an RTSP playback/consumption service; its dashboard URLs are
+not phone-camera publishing URLs. Publish each phone to one path on the server:
 
 ```text
-rtsp://<server-lan-ip>:8554/entry-cam
-rtsp://<server-lan-ip>:8554/queue-cam-1
-rtsp://<server-lan-ip>:8554/queue-cam-2
-rtsp://<server-lan-ip>:8554/shelf-cam-1
+rtmp://<server-lan-ip>:1935/entry-cam
+rtmp://<server-lan-ip>:1935/queue-cam-1
+rtmp://<server-lan-ip>:1935/queue-cam-2
+rtmp://<server-lan-ip>:1935/shelf-cam-1
 ```
+
+If the broadcaster has separate server and stream-key fields, use
+`rtmp://<server-lan-ip>:1935` as the server and the camera ID as the stream
+key. The StoreSense process reads the corresponding local RTSP relay URL.
 
 Keep the phones plugged in, keep the stream app open, and disable battery
 optimization for that app during testing.
