@@ -11,6 +11,8 @@ from datetime import datetime, timezone
 
 from storage import repositories
 from integrations.edge_health import read_health_report
+from config.live_cameras import load_live_camera_publish_urls, load_live_camera_urls
+from integrations.mediamtx import path_status
 
 
 def _timestamp(value: Any) -> str | None:
@@ -98,6 +100,8 @@ class _RequestHandler(BaseHTTPRequestHandler):
         elif self.path == "/api/v1/status":
             self._send(_status())
         elif self.path == "/api/v1/cameras":
+            rtsp_urls = load_live_camera_urls()
+            rtmp_urls = load_live_camera_publish_urls()
             self._send({
                 "cameras": [
                     {
@@ -106,8 +110,13 @@ class _RequestHandler(BaseHTTPRequestHandler):
                         "zone_id": camera.zone_id,
                         "online": camera.online,
                         "last_seen": _timestamp(camera.last_seen),
+                        "publisher_active": media_status.active,
+                        "stream_status": media_status.status,
+                        "rtmp_publish_url": rtmp_urls.get(camera.id),
+                        "rtsp_url": rtsp_urls.get(camera.id),
                     }
                     for camera in repositories.list_cameras()
+                    for media_status in (path_status(camera.id),)
                 ]
             })
         else:

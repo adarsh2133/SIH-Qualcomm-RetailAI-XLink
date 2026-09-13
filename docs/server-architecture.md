@@ -7,7 +7,7 @@ those boundaries rather than a second analytics system.
 
 ```mermaid
 flowchart TD
-    C[Phone or IP cameras] -->|RTSP| M[MediaMTX on ASUS ExpertBook]
+    C[Phone RTMP broadcaster] -->|RTMP :1935| M[MediaMTX on ASUS ExpertBook]
     M --> O[OpenCV RTSP sources]
     O --> Y[YOLO inference]
     Y --> T[Tracking]
@@ -24,7 +24,7 @@ flowchart TD
 
 ## Components
 
-- `deploy/mediamtx/`: local RTSP stream manager configuration.
+- `deploy/mediamtx/`: local RTMP ingress and RTSP relay configuration.
 - `adapters/video/opencv_rtsp_source.py`: reconnecting OpenCV RTSP input.
 - `adapters/inference/ultralytics_engine.py`: YOLO adapter.
 - `services/live_pipeline.py`: multi-camera orchestration using the existing
@@ -44,14 +44,14 @@ STORESENSE_CAMERA_IDS=entry-cam,queue-cam-1,queue-cam-2,shelf-cam-1
 STORESENSE_RTSP_BASE_URL=rtsp://127.0.0.1:8554
 ```
 
-For four phones publishing into MediaMTX, configure the phone apps with the
-server LAN IP and these path names:
+For four phones publishing into MediaMTX, use an RTMP broadcaster (not an RTSP
+viewer) and configure the phone apps with the server LAN IP and these paths:
 
 ```text
-rtsp://<server-lan-ip>:8554/entry-cam
-rtsp://<server-lan-ip>:8554/queue-cam-1
-rtsp://<server-lan-ip>:8554/queue-cam-2
-rtsp://<server-lan-ip>:8554/shelf-cam-1
+rtmp://<server-lan-ip>:1935/entry-cam
+rtmp://<server-lan-ip>:1935/queue-cam-1
+rtmp://<server-lan-ip>:1935/queue-cam-2
+rtmp://<server-lan-ip>:1935/shelf-cam-1
 ```
 
 For direct phone pull, override individual URLs in `.env`:

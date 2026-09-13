@@ -128,14 +128,18 @@ Camera URLs are environment-driven. For the four-phone setup, copy
 docker compose -f deploy/mediamtx/docker-compose.yml up -d
 ```
 
-With the MediaMTX workflow, set the phones to publish to these server paths:
+With the MediaMTX workflow, use an RTMP broadcaster on each phone and publish
+to these server paths:
 
 ```text
-rtsp://<server-lan-ip>:8554/entry-cam
-rtsp://<server-lan-ip>:8554/queue-cam-1
-rtsp://<server-lan-ip>:8554/queue-cam-2
-rtsp://<server-lan-ip>:8554/shelf-cam-1
+rtmp://<server-lan-ip>:1935/entry-cam
+rtmp://<server-lan-ip>:1935/queue-cam-1
+rtmp://<server-lan-ip>:1935/queue-cam-2
+rtmp://<server-lan-ip>:1935/shelf-cam-1
 ```
+
+An RTSP viewer such as OctoStream cannot publish the phone camera. The server
+then reads each active path locally through RTSP on port 8554.
 
 The server app then reads them locally with:
 

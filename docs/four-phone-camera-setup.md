@@ -56,6 +56,7 @@ If Ubuntu firewall is enabled:
 
 ```bash
 sudo ufw allow 8554/tcp
+sudo ufw allow 1935/tcp
 sudo ufw allow 8080/tcp
 ```
 
