@@ -1,0 +1,6 @@
+path: C:/Users/Adarsh/Downloads/SKU_Shelf/SKU110K_fixed
+train: images/train
+val: images/val
+test: images/test
+names:
+  0: sku

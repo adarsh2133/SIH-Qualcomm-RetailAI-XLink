@@ -1,0 +1,6 @@
+metric,value,status
+footfall,,N/A
+queue_length,,N/A
+inventory_units,,N/A
+dwell_seconds,,N/A
+mode,LIVE,VALIDATED
