@@ -1,0 +1,12 @@
+# Tkinter ships with CPython; customtkinter provides the dark desktop shell.
+customtkinter>=5.2,<6
+Pillow>=10,<12
+
+# Optional hardware/capture dependencies:
+# opencv-python
+# numpy
+# pyserial
+# For local NVIDIA inference, install a CUDA-compatible onnxruntime-gpu
+# matching the deployed CUDA/cuDNN versions.
+# For Qualcomm AI Hub Workbench operations, install qai-hub and configure
+# PORTAL_QAIHUB_TARGET_DEVICE and the required SDK credentials externally.

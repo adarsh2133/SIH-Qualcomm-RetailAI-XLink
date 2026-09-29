@@ -1,0 +1,2 @@
+# Windows desktop packaging toolchain.
+pyinstaller>=6.10,<7

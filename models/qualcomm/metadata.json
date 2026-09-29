@@ -1,0 +1,13 @@
+{
+  "source": null,
+  "model": "Detectron2-Detection",
+  "checkpoint": "faster_rcnn_R_50_C4_1x",
+  "input": "800x800",
+  "target_device": null,
+  "runtime": null,
+  "job_id": null,
+  "compile_status": "NOT RUN",
+  "profile_status": "NOT RUN",
+  "inference_status": "NOT RUN",
+  "created_at": null
+}

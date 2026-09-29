@@ -1,0 +1,4 @@
+# Install on the separate machine used to train and prepare SKU110K.
+ultralytics>=8.3,<9
+Pillow>=10,<12
+PyYAML>=6,<7
